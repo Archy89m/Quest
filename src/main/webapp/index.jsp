@@ -1,12 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Пример Кнопки</title>
+    <title>Quests</title>
 </head>
 <body>
 
-<form action="redirect" method="get">
-    <input type="submit" value="Перейти на другую страницу">
+<h3>A quest is an adventurous journey undertaken to achieve a specific goal or complete a challenging task.</h3>
+
+<form action="catalog" method="get">
+    <input type="submit" value="Select quests">
 </form>
 
 </body>

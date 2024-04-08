@@ -1,5 +1,6 @@
 package servlets;
 
+import questLogic.Service;
 import quests.Quest;
 
 import javax.servlet.*;
@@ -12,14 +13,15 @@ import java.util.List;
 
 import static quests.QuestLoader.loadQuestFromYaml;
 
-@WebServlet(name = "RedirectServlet", value = "/redirect")
+@WebServlet(name = "RedirectServlet", value = "/catalog")
 public class CatalogServlet extends HttpServlet {
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         List<String> buttons = Arrays.asList("Quest 1", "Quest 2", "Quest 3");
+
+        List<String> fileList = Service.getResourceFiles(getServletContext());
 
         HttpSession session = req.getSession();
         session.setAttribute("quests", buttons);
