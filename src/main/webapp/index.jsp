@@ -1,5 +1,13 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
+    <title>Пример Кнопки</title>
+</head>
 <body>
-<h2>Hello Quest!</h2>
+
+<form action="redirect" method="get">
+    <input type="submit" value="Перейти на другую страницу">
+</form>
+
 </body>
 </html>
