@@ -1,0 +1,61 @@
+title: "The Enigma of the Desert Oasis"
+story: "You stumble upon a remote desert oasis, rumored to hold ancient secrets and treasures."
+decisions:
+  step1:
+    prompt: "Will you explore the oasis or venture into the surrounding desert?"
+    options:
+      - title: "Explore the oasis"
+        story: "You decide to explore the oasis and discover a hidden cavern."
+        next: "step2"
+      - title: "Venture into the desert"
+        story: "As you journey into the desert, you stumble upon an old map buried in the sand."
+        next: "step3"
+  step2:
+    prompt: "Will you enter the cavern or follow the trail leading deeper into the oasis?"
+    options:
+      - title: "Enter the cavern"
+        story: "Inside the cavern, you find ancient hieroglyphics carved into the walls."
+        next: "step4"
+      - title: "Follow the trail"
+        story: "Following the trail, you encounter a group of nomads who offer you hospitality."
+        next: "step5"
+  step3:
+    prompt: "Will you follow the map's directions or rely on your instincts to guide you?"
+    options:
+      - title: "Follow the map"
+        story: "Following the map leads you to a hidden temple buried beneath the sands."
+        next: "ending1"
+      - title: "Rely on instincts"
+        story: "Relying on your instincts, you stumble upon a forgotten oasis filled with rare flora."
+        next: "ending2"
+  step4:
+    prompt: "Will you decipher the hieroglyphics or search for hidden passages?"
+    options:
+      - title: "Decipher hieroglyphics"
+        story: "Deciphering the hieroglyphics reveals the location of a sacred artifact."
+        next: "ending3"
+      - title: "Search for passages"
+        story: "Your search uncovers a secret chamber containing treasures lost to time."
+        next: "ending4"
+  step5:
+    prompt: "Will you accept the nomads' offer or continue your exploration alone?"
+    options:
+      - title: "Accept nomads' hospitality"
+        story: "Accepting their hospitality, you learn ancient tales and legends of the desert."
+        next: "ending5"
+      - title: "Continue exploration alone"
+        story: "Continuing alone, you discover a hidden oasis with mystical properties."
+        next: "ending6"
+endings:
+  ending1:
+    story: "You uncover the ancient temple and its guardian, who bestows upon you the wisdom of the ages."
+  ending2:
+    story: "The oasis reveals its secrets, enriching your journey with its beauty and tranquility."
+  ending3:
+    story: "The sacred artifact grants you insight into the mysteries of the desert and its history."
+  ending4:
+    story: "The treasures of the chamber reward your bravery, securing your legacy as a legendary explorer."
+  ending5:
+    story: "The nomads' tales inspire you, shaping your understanding of the desert's rich culture and heritage."
+  ending6:
+    story: "The hidden oasis becomes your sanctuary, a place of solace and reflection amidst the harsh desert landscape."

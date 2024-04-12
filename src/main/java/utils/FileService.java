@@ -1,4 +1,4 @@
-package questLogic;
+package utils;
 
 import javax.servlet.ServletContext;
 import java.io.File;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Service {
+public class FileService {
 
     public static List<String> getResourceFiles(ServletContext context) throws IOException {
 
@@ -27,4 +27,10 @@ public class Service {
         return fileList;
     }
 
+    public static List<String> getQuestNames(ServletContext context) throws IOException {
+
+        List<String> fileList = getResourceFiles(context);
+        fileList.replaceAll(filename -> filename.replace(".yml", ""));
+        return fileList;
+    }
 }

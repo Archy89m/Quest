@@ -5,11 +5,14 @@
     <title>${sessionScope.title}</title>
 </head>
 <body>
-${sessionScope.quest}
 
+<h3>Quest story:</h3>
 <p>${sessionScope.story}</p>
 
+<h4>Prompt:</h4>
 <p>${sessionScope.prompt}</p>
+
+<p>${sessionScope.optionTitle}</p>
 
 <form action="getAnswer" method="post">
     <c:forEach items="${sessionScope.listOfAnswers}" var="answer">
@@ -20,7 +23,7 @@ ${sessionScope.quest}
 <p>${sessionScope.answerStory}</p>
 
 <% if (session.getAttribute("answerStory") != null && !session.getAttribute("answerStory").equals("")) { %>
-<form action="nextStep" method="post">
+<form action="start" method="post">
     <button type="submit">Next step</button>
 </form>
 <% } %>

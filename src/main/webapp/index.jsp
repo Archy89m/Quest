@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Quests</title>
+    <title>Quest app</title>
 </head>
 <body>
 
-<h3>A quest is an adventurous journey undertaken to achieve a specific goal or complete a challenging task.</h3>
+<h3>Welcome to the mystical quests app</h3>
 
 <form action="catalog" method="get">
     <input type="submit" value="Select quests">

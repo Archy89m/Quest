@@ -3,9 +3,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Finish</title>
 </head>
 <body>
-<p>${sessionScope.ending}</p>
+
+<h3>THE END</h3>
+
+<p>${sessionScope.answerStory}</p>
 </body>
+
+<form action="start" method="get">
+    <input type="submit" value="Return to start">
+</form>
 </html>

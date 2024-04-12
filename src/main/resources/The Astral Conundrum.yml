@@ -1,0 +1,61 @@
+title: "The Astral Conundrum"
+story: "Whispers of an astral anomaly draw you to a remote observatory atop a towering mountain, where astronomers once sought answers to celestial mysteries."
+decisions:
+  step1:
+    prompt: "Will you ascend the mountain or consult ancient texts for clues?"
+    options:
+      - title: "Ascend the mountain"
+        story: "You embark on the arduous journey up the mountain, braving treacherous cliffs and biting winds."
+        next: "step2"
+      - title: "Consult ancient texts"
+        story: "You delve into ancient manuscripts, uncovering cryptic references to the astral anomaly."
+        next: "step3"
+  step2:
+    prompt: "Will you brave the mountain pass or seek shelter in a cave?"
+    options:
+      - title: "Brave the mountain pass"
+        story: "Navigating the perilous mountain pass, you catch a glimpse of the astral anomaly shimmering in the night sky."
+        next: "step4"
+      - title: "Seek shelter in a cave"
+        story: "Taking refuge in a cave, you discover ancient carvings depicting the astral anomaly's influence on the cosmos."
+        next: "step5"
+  step3:
+    prompt: "Will you decipher the ancient texts or seek guidance from a sage?"
+    options:
+      - title: "Decipher the ancient texts"
+        story: "Deciphering the texts reveals a ritual that may unlock the secrets of the astral anomaly."
+        next: "ending1"
+      - title: "Seek guidance from a sage"
+        story: "The sage imparts wisdom, guiding you towards a hidden shrine where the astral anomaly's power is strongest."
+        next: "ending2"
+  step4:
+    prompt: "Will you attempt to observe the anomaly or perform the ritual described in the ancient texts?"
+    options:
+      - title: "Observe the anomaly"
+        story: "Observing the anomaly reveals patterns that hint at its true nature and purpose."
+        next: "ending3"
+      - title: "Perform the ritual"
+        story: "Performing the ritual unleashes a surge of astral energy, granting you insights into the mysteries of the cosmos."
+        next: "ending4"
+  step5:
+    prompt: "Will you study the cave carvings further or meditate to commune with the astral anomaly?"
+    options:
+      - title: "Study the cave carvings"
+        story: "Studying the carvings unlocks hidden meanings, guiding you towards a deeper understanding of the anomaly."
+        next: "ending5"
+      - title: "Meditate to commune with the anomaly"
+        story: "Meditating, you connect with the astral anomaly, experiencing visions that reveal its cosmic significance."
+        next: "ending6"
+endings:
+  ending1:
+    story: "The ritual unlocks the secrets of the astral anomaly, revealing its purpose and significance in the grand tapestry of the universe."
+  ending2:
+    story: "Guided by the sage, you unlock the mysteries of the astral anomaly, gaining knowledge that transcends mortal understanding."
+  ending3:
+    story: "Observing the anomaly, you glimpse the workings of the cosmos, forever altering your perception of the universe."
+  ending4:
+    story: "The ritual channels the power of the astral anomaly, imbuing you with cosmic wisdom and enlightenment."
+  ending5:
+    story: "Studying the cave carvings, you unravel the mysteries of the astral anomaly, becoming a beacon of knowledge in the realm of astronomy."
+  ending6:
+    story: "Communing with the anomaly, you become one with the cosmos, forever connected to the celestial wonders that shape our reality."

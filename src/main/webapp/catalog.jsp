@@ -2,9 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Quests</title>
+    <title>Quest catalog</title>
 </head>
 <body>
+
+<h3>Quest catalog</h3>
 
 <c:forEach var="quest" items="${sessionScope.quests}">
     <form action="catalog" method="post">
@@ -14,7 +16,7 @@
 </c:forEach>
 
 <form action="start" method="get">
-    <input type="submit" value="Return to the start page">
+    <input type="submit" value="Return to start">
 </form>
 
 </body>
