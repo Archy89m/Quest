@@ -1,15 +1,14 @@
-package utils;
+package services;
 
 import javax.servlet.ServletContext;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class FileService {
+public class Utils {
 
-    public static List<String> getResourceFiles(ServletContext context) throws IOException {
+    public static List<String> getResourceFiles(ServletContext context) {
 
         List<String> fileList = new ArrayList<>();
         String fullPath = context.getRealPath("/WEB-INF/classes/questStories/");
@@ -27,10 +26,19 @@ public class FileService {
         return fileList;
     }
 
-    public static List<String> getQuestNames(ServletContext context) throws IOException {
+    public static List<String> getQuestNames(ServletContext context) {
 
         List<String> fileList = getResourceFiles(context);
         fileList.replaceAll(filename -> filename.replace(".yml", ""));
         return fileList;
+    }
+
+    public static String getNextStepJSP(String nextStep) {
+
+        if (nextStep.contains("ending")) {
+            return "/result.jsp";
+        } else {
+            return "/quest.jsp";
+        }
     }
 }

@@ -1,7 +1,7 @@
 package servlets;
 
 import quests.Quest;
-import quests.QuestLogic;
+import services.Utils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-@WebServlet(name = "answerServlet", value = "/getAnswer")
+@WebServlet("/getAnswer")
 public class AnswerServlet extends HttpServlet {
 
     @Override
@@ -27,13 +27,13 @@ public class AnswerServlet extends HttpServlet {
         Quest quest = (Quest) session.getAttribute("quest");
         String currentStep = (String) session.getAttribute("step");
 
-        HashMap<String, String> answerData = QuestLogic.getAnswerData(quest, currentStep, selectedAnswer);
+        HashMap<String, String> answerData = quest.getAnswerData(currentStep, selectedAnswer);
 
         session.setAttribute("answerStory", answerData.get("answerStory"));
         session.setAttribute("step", answerData.get("nextStep"));
         session.setAttribute("listOfAnswers", new ArrayList<>());
         session.setAttribute("optionTitle", "Result:");
 
-        getServletContext().getRequestDispatcher(QuestLogic.getNextStepJSP(answerData.get("nextStep"))).forward(req, resp);
+        getServletContext().getRequestDispatcher(Utils.getNextStepJSP(answerData.get("nextStep"))).forward(req, resp);
     }
 }

@@ -1,7 +1,7 @@
 package servlets;
 
 import quests.Quest;
-import quests.QuestLogic;
+import services.Utils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Enumeration;
 
-@WebServlet(name = "StepServlet", value = "/start")
+@WebServlet("/start")
 public class StepServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -38,9 +38,9 @@ public class StepServlet extends HttpServlet {
 
         session.setAttribute("answerStory", "");
         session.setAttribute("prompt", quest.decisions().get(nextStep).prompt());
-        session.setAttribute("listOfAnswers", QuestLogic.getTitleOptions(quest.decisions().get(nextStep).options()));
+        session.setAttribute("listOfAnswers", quest.getTitleOptions(nextStep));
         session.setAttribute("optionTitle", "Select option:");
 
-        getServletContext().getRequestDispatcher(QuestLogic.getNextStepJSP(nextStep)).forward(req, resp);
+        getServletContext().getRequestDispatcher(Utils.getNextStepJSP(nextStep)).forward(req, resp);
     }
 }

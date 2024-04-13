@@ -1,24 +1,21 @@
 package servlets;
 
-import quests.QuestLogic;
-import utils.FileService;
 import quests.Quest;
+import services.Utils;
 
-import javax.servlet.*;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
-import static quests.Quest.loadQuestFromYaml;
-
-@WebServlet(name = "RedirectServlet", value = "/catalog")
+@WebServlet("/catalog")
 public class CatalogServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        List<String> buttons = FileService.getQuestNames(getServletContext());
+        List<String> buttons = Utils.getQuestNames(getServletContext());
 
         HttpSession session = req.getSession();
         session.setAttribute("quests", buttons);
@@ -30,7 +27,7 @@ public class CatalogServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String selectedQuest = req.getParameter("questValue");
-        Quest quest = loadQuestFromYaml("questStories/" + selectedQuest + ".yml");
+        Quest quest = Quest.loadQuestFromYaml("questStories/" + selectedQuest + ".yml");
 
         HttpSession session = req.getSession();
         session.setAttribute("quest", quest);
@@ -38,9 +35,9 @@ public class CatalogServlet extends HttpServlet {
         session.setAttribute("story", quest.story());
         session.setAttribute("step", "step1");
         session.setAttribute("prompt", quest.decisions().get("step1").prompt());
-        session.setAttribute("listOfAnswers", QuestLogic.getTitleOptions(quest.decisions().get("step1").options()));
+        session.setAttribute("listOfAnswers", quest.getTitleOptions("step1"));
         session.setAttribute("optionTitle", "Select option:");
 
-        getServletContext().getRequestDispatcher(QuestLogic.getNextStepJSP("step1")).forward(req, resp);
+        getServletContext().getRequestDispatcher(Utils.getNextStepJSP("step1")).forward(req, resp);
     }
 }

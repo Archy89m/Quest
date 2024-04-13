@@ -5,7 +5,7 @@
   <artifactId>Quest</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>Quest Maven Webapp</name>
+  <name>quests.Quest Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -42,7 +42,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>Quest</finalName>
+    <finalName>quests.Quest</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
