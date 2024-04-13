@@ -3,28 +3,32 @@
 <html>
 <head>
     <title>${sessionScope.title}</title>
+    <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
 
-<h3>Quest story:</h3>
-<p>${sessionScope.story}</p>
+<h3 class="quest-title">Quest story:</h3>
+<p class="story-text">${sessionScope.story}</p>
 
-<h4>Prompt:</h4>
-<p>${sessionScope.prompt}</p>
+<p class="story-text">${sessionScope.prompt}</p>
 
-<p>${sessionScope.optionTitle}</p>
+<p class="option-title">${sessionScope.optionTitle}</p>
 
-<form action="getAnswer" method="post">
-    <c:forEach items="${sessionScope.listOfAnswers}" var="answer">
-        <input type="submit" name="selectedAnswer" value="${answer}">
-    </c:forEach>
-</form>
+<div class="button-container">
+    <form action="getAnswer" method="post">
+        <c:forEach items="${sessionScope.listOfAnswers}" var="answer">
+            <input type="submit" name="selectedAnswer" value="${answer}" class="quest-button">
+        </c:forEach>
+    </form>
+</div>
 
-<p>${sessionScope.answerStory}</p>
+<c:if test="${not empty sessionScope.answerStory}">
+    <p class="story-text">${sessionScope.answerStory}</p>
+</c:if>
 
 <% if (session.getAttribute("answerStory") != null && !session.getAttribute("answerStory").equals("")) { %>
-<form action="start" method="post">
-    <button type="submit">Next step</button>
+<form action="start" method="post" class="button-container">
+    <input type="submit" value="Next step" class="quest-button">
 </form>
 <% } %>
 

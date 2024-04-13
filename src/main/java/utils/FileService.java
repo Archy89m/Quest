@@ -12,7 +12,7 @@ public class FileService {
     public static List<String> getResourceFiles(ServletContext context) throws IOException {
 
         List<String> fileList = new ArrayList<>();
-        String fullPath = context.getRealPath("/WEB-INF/classes/");
+        String fullPath = context.getRealPath("/WEB-INF/classes/questStories/");
 
         File directory = new File(fullPath);
         if (directory.exists() && directory.isDirectory()) {

@@ -1,0 +1,79 @@
+.quest-title {
+    font-family: 'Merriweather', serif; /* Выберем серифный шрифт для заголовков */
+    font-size: 32px; /* Установим достаточный размер шрифта */
+    color: #2e2e2e; /* Цвет текста */
+    text-align: center; /* Выравнивание по центру */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Добавим тень для выделения заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.quest-title::before {
+    content: ''; /* Добавим пустой контент */
+    display: block; /* Сделаем блочный элемент */
+    width: 50px; /* Ширина */
+    height: 3px; /* Толщина */
+    background-color: #6d4e42; /* Цвет полосы */
+    margin: 0 auto 10px; /* Отступы */
+}
+
+.story-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: bold; /* Сделать текст жирным */
+    line-height: 1.6;
+    color: #333; /* Цвет текста для светлого фона */
+    text-align: center;
+    margin: 20px auto; /* Устанавливаем верхний и нижний отступ в 20px, а горизонтальный автоматически выравнивается по центру */
+    padding: 20px;
+    background: none; /* Светлый фон */
+    border-radius: 5px; /* Установить радиус скругления углов */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Тень для элемента */
+    max-width: 50%; /* Ограничиваем максимальную ширину до 50% */
+}
+
+.option-title {
+    text-align: center; /* Выравнивание по центру */
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+    animation: blink 1s infinite; /* Применяем анимацию */
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.quest-button {
+    background-color: #6d4e42; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 18px; /* Размер шрифта */
+    cursor: pointer; /* Изменение курсора при наведении */
+    border-radius: 5px; /* Скругление углов */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+.quest-button:hover {
+    background-color: #8b635e; /* Новый цвет фона при наведении */
+}
+
+.button-container {
+    text-align: center; /* Центрирование содержимого формы */
+    margin-top: 20px; /* Добавляем отступ сверху */
+}
+
+body {
+    background-image: url('background.jpg'); /* Путь к вашей картинке */
+    background-size: cover; /* Растягиваем картинку, чтобы она покрывала всю область фона */
+    background-position: center; /* Центрируем картинку */
+    background-repeat: no-repeat; /* Запрещаем повторять картинку */
+}

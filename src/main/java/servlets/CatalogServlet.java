@@ -30,7 +30,7 @@ public class CatalogServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String selectedQuest = req.getParameter("questValue");
-        Quest quest = loadQuestFromYaml(selectedQuest + ".yml");
+        Quest quest = loadQuestFromYaml("questStories/" + selectedQuest + ".yml");
 
         HttpSession session = req.getSession();
         session.setAttribute("quest", quest);

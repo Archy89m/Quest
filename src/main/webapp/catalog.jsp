@@ -3,21 +3,18 @@
 <html>
 <head>
     <title>Quest catalog</title>
+    <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
 
-<h3>Quest catalog</h3>
+<h3 class="quest-title">Quest catalog</h3>
 
 <c:forEach var="quest" items="${sessionScope.quests}">
-    <form action="catalog" method="post">
+    <form action="catalog" method="post" class="button-container">
         <input type="hidden" name="questValue" value="${quest}" />
-        <input type="submit" value="${quest}" />
+        <input type="submit" value="${quest}" class="quest-button"/>
     </form>
 </c:forEach>
-
-<form action="start" method="get">
-    <input type="submit" value="Return to start">
-</form>
 
 </body>
 </html>
