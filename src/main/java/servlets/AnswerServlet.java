@@ -32,8 +32,8 @@ public class AnswerServlet extends HttpServlet {
         session.setAttribute("answerStory", answerData.get("answerStory"));
         session.setAttribute("step", answerData.get("nextStep"));
         session.setAttribute("listOfAnswers", new ArrayList<>());
-        session.setAttribute("optionTitle", "Result:");
+        session.setAttribute("optionTitle", Quest.OPTION_RESULT);
 
-        getServletContext().getRequestDispatcher(Utils.getNextStepJSP(answerData.get("nextStep"))).forward(req, resp);
+        getServletContext().getRequestDispatcher(quest.getNextStepJSP(answerData.get("nextStep"))).forward(req, resp);
     }
 }

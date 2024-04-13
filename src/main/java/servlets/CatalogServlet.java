@@ -15,7 +15,7 @@ public class CatalogServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        List<String> buttons = Utils.getQuestNames(getServletContext());
+        List<String> buttons = Utils.getQuestNames(getServletContext(), Quest.QUESTS_PATH_WEB_SERVER);
 
         HttpSession session = req.getSession();
         session.setAttribute("quests", buttons);
@@ -27,17 +27,17 @@ public class CatalogServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String selectedQuest = req.getParameter("questValue");
-        Quest quest = Quest.loadQuestFromYaml("questStories/" + selectedQuest + ".yml");
+        Quest quest = Quest.loadQuestFromYaml(Quest.QUESTS_PATH_SOURCE + selectedQuest + Quest.QUEST_FILE_FORMAT);
 
         HttpSession session = req.getSession();
         session.setAttribute("quest", quest);
         session.setAttribute("title", quest.title());
         session.setAttribute("story", quest.story());
-        session.setAttribute("step", "step1");
-        session.setAttribute("prompt", quest.decisions().get("step1").prompt());
-        session.setAttribute("listOfAnswers", quest.getTitleOptions("step1"));
-        session.setAttribute("optionTitle", "Select option:");
+        session.setAttribute("step", quest.getFirstStep());
+        session.setAttribute("prompt", quest.decisions().get(quest.getFirstStep()).prompt());
+        session.setAttribute("listOfAnswers", quest.getTitleOptions(quest.getFirstStep()));
+        session.setAttribute("optionTitle", Quest.OPTION_SELECT);
 
-        getServletContext().getRequestDispatcher(Utils.getNextStepJSP("step1")).forward(req, resp);
+        getServletContext().getRequestDispatcher(quest.getNextStepJSP(quest.getFirstStep())).forward(req, resp);
     }
 }

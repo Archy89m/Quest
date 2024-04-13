@@ -1,5 +1,7 @@
 package services;
 
+import quests.Quest;
+
 import javax.servlet.ServletContext;
 import java.io.File;
 import java.util.ArrayList;
@@ -8,10 +10,10 @@ import java.util.List;
 
 public class Utils {
 
-    public static List<String> getResourceFiles(ServletContext context) {
+    public static List<String> getResourceFiles(ServletContext context, String catalogPath) {
 
         List<String> fileList = new ArrayList<>();
-        String fullPath = context.getRealPath("/WEB-INF/classes/questStories/");
+        String fullPath = context.getRealPath(catalogPath);
 
         File directory = new File(fullPath);
         if (directory.exists() && directory.isDirectory()) {
@@ -26,19 +28,10 @@ public class Utils {
         return fileList;
     }
 
-    public static List<String> getQuestNames(ServletContext context) {
+    public static List<String> getQuestNames(ServletContext context, String path) {
 
-        List<String> fileList = getResourceFiles(context);
-        fileList.replaceAll(filename -> filename.replace(".yml", ""));
+        List<String> fileList = getResourceFiles(context, path);
+        fileList.replaceAll(filename -> filename.replace(Quest.QUEST_FILE_FORMAT, ""));
         return fileList;
-    }
-
-    public static String getNextStepJSP(String nextStep) {
-
-        if (nextStep.contains("ending")) {
-            return "/result.jsp";
-        } else {
-            return "/quest.jsp";
-        }
     }
 }

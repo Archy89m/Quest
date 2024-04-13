@@ -1,7 +1,6 @@
 package servlets;
 
 import quests.Quest;
-import services.Utils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,8 +38,8 @@ public class StepServlet extends HttpServlet {
         session.setAttribute("answerStory", "");
         session.setAttribute("prompt", quest.decisions().get(nextStep).prompt());
         session.setAttribute("listOfAnswers", quest.getTitleOptions(nextStep));
-        session.setAttribute("optionTitle", "Select option:");
+        session.setAttribute("optionTitle", Quest.OPTION_SELECT);
 
-        getServletContext().getRequestDispatcher(Utils.getNextStepJSP(nextStep)).forward(req, resp);
+        getServletContext().getRequestDispatcher(quest.getNextStepJSP(nextStep)).forward(req, resp);
     }
 }

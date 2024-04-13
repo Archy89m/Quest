@@ -15,6 +15,12 @@ public record Quest(String title,
                     Map<String, Decision> decisions,
                     Map<String, Ending> endings) {
 
+    public static final String QUESTS_PATH_WEB_SERVER = "/WEB-INF/classes/questStories/";
+    public static final String QUESTS_PATH_SOURCE = "questStories/";
+    public static final String OPTION_SELECT = "Select option:";
+    public static final String OPTION_RESULT = "Result:";
+    public static final String QUEST_FILE_FORMAT = ".yml";
+
     public record Decision(String prompt, List<Option> options) {}
 
     public record Option(String title, String story, String next) {}
@@ -56,5 +62,18 @@ public record Quest(String title,
             }
         }
         return answerData;
+    }
+
+    public String getFirstStep() {
+        return decisions().entrySet().iterator().next().getKey();
+    }
+
+    public String getNextStepJSP(String nextStep) {
+
+        if (nextStep.contains("ending")) {
+            return "/result.jsp";
+        } else {
+            return "/quest.jsp";
+        }
     }
 }
