@@ -1,0 +1,61 @@
+title: "The Lost City of Eldoria"
+story: "Rumors speak of a fabled city, Eldoria, hidden deep within the dense jungle, waiting to be discovered by brave adventurers."
+decisions:
+  step1:
+    prompt: "Will you venture into the jungle or seek information from local villagers?"
+    options:
+      - title: "Venture into the jungle"
+        story: "You embark on a journey into the dense jungle, hacking your way through the foliage."
+        next: "step2"
+      - title: "Seek information from villagers"
+        story: "You decide to seek guidance from the local villagers, who whisper tales of Eldoria."
+        next: "step3"
+  step2:
+    prompt: "Will you follow the river upstream or climb the tallest tree for a better vantage point?"
+    options:
+      - title: "Follow the river upstream"
+        story: "Following the river leads you to the ruins of an ancient temple overrun by vegetation."
+        next: "step4"
+      - title: "Climb the tallest tree"
+        story: "From the top of the tree, you spot a distant glimmer amidst the dense foliage."
+        next: "step5"
+  step3:
+    prompt: "Will you trust the villagers' stories or search for clues independently?"
+    options:
+      - title: "Trust the villagers' stories"
+        story: "Following the villagers' stories leads you to a hidden entrance concealed beneath a waterfall."
+        next: "ending1"
+      - title: "Search for clues independently"
+        story: "Your independent search uncovers an ancient map revealing the location of Eldoria."
+        next: "ending2"
+  step4:
+    prompt: "Will you explore the temple ruins or decipher the ancient inscriptions?"
+    options:
+      - title: "Explore the temple ruins"
+        story: "Exploring the temple reveals clues pointing to Eldoria's location deep within the jungle."
+        next: "ending3"
+      - title: "Decipher the ancient inscriptions"
+        story: "Deciphering the inscriptions leads you to a hidden chamber containing valuable artifacts."
+        next: "ending4"
+  step5:
+    prompt: "Will you head towards the glimmering object or continue exploring the jungle?"
+    options:
+      - title: "Head towards the glimmering object"
+        story: "Approaching the glimmer, you discover the entrance to Eldoria concealed beneath a thick canopy."
+        next: "ending5"
+      - title: "Continue exploring the jungle"
+        story: "Continuing your exploration, you stumble upon the remnants of an ancient civilization."
+        next: "ending6"
+endings:
+  ending1:
+    story: "You uncover the hidden entrance to Eldoria, where the villagers' tales come to life, revealing a city frozen in time."
+  ending2:
+    story: "The ancient map guides you to Eldoria's doorstep, where you become the first outsider to set foot in the legendary city."
+  ending3:
+    story: "The temple ruins provide valuable insights into Eldoria's history, enriching your understanding of the lost city."
+  ending4:
+    story: "The artifacts within the hidden chamber offer a glimpse into Eldoria's past glory, fueling your desire to uncover more secrets."
+  ending5:
+    story: "Entering Eldoria, you are mesmerized by its beauty and grandeur, knowing that you have discovered one of the greatest secrets of the jungle."
+  ending6:
+    story: "Exploring further, you become entranced by the jungle's mysteries, knowing that Eldoria may still await discovery another day."

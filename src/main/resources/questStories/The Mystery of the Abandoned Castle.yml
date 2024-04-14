@@ -1,0 +1,61 @@
+title: "The Mystery of the Abandoned Castle"
+story: "You find yourself at the entrance of an ancient castle, shrouded in mysteries and legends."
+decisions:
+  step1:
+    prompt: "Will you enter the castle or go around it?"
+    options:
+      - title: "Enter the castle"
+        story: "You decide to enter the castle and find yourself in the majestic hall."
+        next: "step2"
+      - title: "Go around the castle"
+        story: "As you walk around the castle, you find a secret entrance to the dungeon."
+        next: "step3"
+  step2:
+    prompt: "Will you explore the central hall or head to the staircase leading to the upper floors?"
+    options:
+      - title: "Explore the hall"
+        story: "Exploring the hall, you find an ancient scroll with a map."
+        next: "step4"
+      - title: "Go up the staircase"
+        story: "On the upper floors, you encounter a mysterious inhabitant of the castle."
+        next: "step5"
+  step3:
+    prompt: "Will you go left, where footsteps are heard, or right, where traces lead?"
+    options:
+      - title: "Go left"
+        story: "You encounter the ghost of the old keeper."
+        next: "ending1"
+      - title: "Go right"
+        story: "The traces lead you to a forgotten treasure."
+        next: "ending2"
+  step4:
+    prompt: "Will you use the map to search for treasure or try to solve the riddle of the scroll?"
+    options:
+      - title: "Search for treasure"
+        story: "You find the ancient treasure of the castle."
+        next: "ending3"
+      - title: "Solve the riddle"
+        story: "Solving the riddle leads you to a secret room with artifacts."
+        next: "ending4"
+  step5:
+    prompt: "Will you talk to the inhabitant or try to slip away unnoticed?"
+    options:
+      - title: "Talk to the inhabitant"
+        story: "The inhabitant turns out to be the last heir of the castle's owners."
+        next: "ending5"
+      - title: "Slip away unnoticed"
+        story: "You learn the secret of the castle but decide to keep it to yourself."
+        next: "ending6"
+endings:
+  ending1:
+    story: "The ghost tells you the history of the castle and disappears, leaving you with questions about the past."
+  ending2:
+    story: "You discover ancient coins and jewelry, evidence of long-forgotten events."
+  ending3:
+    story: "The treasure awakens the spirit of the castle, grateful to you for saving its heritage."
+  ending4:
+    story: "The artifacts give you extraordinary knowledge about the castle's past and its secrets."
+  ending5:
+    story: "The conversation with the castle's inhabitant reveals the secret of its past and entrusts you with the care of the castle."
+  ending6:
+    story: "Secretly leaving the castle, you keep its mysteries to yourself, carrying them like a heavy burden of silence."

@@ -1,0 +1,61 @@
+title: "The Enchanted Labyrinth"
+story: "Deep within the enchanted forest lies a labyrinth of twisting paths and hidden passages, rumored to be guarded by mystical creatures and ancient magic."
+decisions:
+  step1:
+    prompt: "Will you enter the labyrinth alone or seek a guide among the forest's inhabitants?"
+    options:
+      - title: "Enter alone"
+        story: "With determination in your heart, you step into the labyrinth, ready to face whatever challenges lie ahead."
+        next: "step2"
+      - title: "Seek a guide"
+        story: "You seek out the guidance of a wise creature, who offers to lead you through the labyrinth for a price."
+        next: "step3"
+  step2:
+    prompt: "Will you follow the path illuminated by moonlight or venture into the shadows?"
+    options:
+      - title: "Follow the moonlit path"
+        story: "Following the moonlit path, you encounter ancient statues that offer cryptic advice."
+        next: "step4"
+      - title: "Venture into the shadows"
+        story: "Venturing into the shadows, you discover hidden alcoves filled with magical artifacts."
+        next: "step5"
+  step3:
+    prompt: "Will you accept the guide's offer or attempt to navigate the labyrinth on your own?"
+    options:
+      - title: "Accept the guide's offer"
+        story: "Accepting the guide's offer, you follow them through the labyrinth, relying on their knowledge to navigate its twists and turns."
+        next: "ending1"
+      - title: "Navigate the labyrinth alone"
+        story: "Opting to navigate the labyrinth alone, you rely on your instincts and wit to overcome its challenges."
+        next: "ending2"
+  step4:
+    prompt: "Will you heed the advice of the statues or press on without delay?"
+    options:
+      - title: "Heed the advice"
+        story: "Heeding the advice of the statues, you make strategic decisions that lead you closer to the heart of the labyrinth."
+        next: "ending3"
+      - title: "Press on"
+        story: "Pressing on without delay, you encounter greater challenges but also discover hidden shortcuts that aid your progress."
+        next: "ending4"
+  step5:
+    prompt: "Will you collect the magical artifacts or search for clues to the labyrinth's secrets?"
+    options:
+      - title: "Collect artifacts"
+        story: "Collecting the artifacts, you harness their magic to overcome obstacles and unlock hidden passages."
+        next: "ending5"
+      - title: "Search for clues"
+        story: "Searching for clues, you uncover ancient markings that reveal the labyrinth's true purpose and origin."
+        next: "ending6"
+endings:
+  ending1:
+    story: "With the guide's help, you navigate the labyrinth and reach its heart, where ancient magic awaits, ready to fulfill your deepest desires."
+  ending2:
+    story: "Navigating the labyrinth alone, you prove your strength and cunning, emerging victorious and forever changed by the challenges you faced."
+  ending3:
+    story: "Heeding the advice of the statues, you reach the heart of the labyrinth, where you are granted wisdom and insight beyond measure."
+  ending4:
+    story: "Pressing on without delay, you conquer the labyrinth's challenges and emerge triumphant, having mastered its secrets and earned its rewards."
+  ending5:
+    story: "Harnessing the power of the magical artifacts, you overcome the labyrinth's trials and emerge as a champion of ancient magic."
+  ending6:
+    story: "Uncovering the labyrinth's secrets, you unlock its true purpose and origin, becoming a guardian of its mysteries and keeper of its magic."

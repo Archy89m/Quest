@@ -1,0 +1,61 @@
+title: "The Echoes of Eternity"
+story: "Legends speak of an ancient temple hidden deep within the heart of a mystical forest, where the echoes of eternity are said to reverberate."
+decisions:
+  step1:
+    prompt: "Will you venture into the forest or seek guidance from a wise elder?"
+    options:
+      - title: "Venture into the forest"
+        story: "You venture into the dense forest, guided by the whispers of the wind and the rustling of leaves."
+        next: "step2"
+      - title: "Seek guidance from a wise elder"
+        story: "You seek out a wise elder, who shares tales of the temple and its enigmatic secrets."
+        next: "step3"
+  step2:
+    prompt: "Will you follow the winding path or forge your own trail through the undergrowth?"
+    options:
+      - title: "Follow the winding path"
+        story: "Following the path leads you deeper into the forest, where you encounter ancient ruins half-consumed by nature."
+        next: "step4"
+      - title: "Forge your own trail"
+        story: "Forging your own trail, you stumble upon a hidden glade where the air shimmers with magic."
+        next: "step5"
+  step3:
+    prompt: "Will you heed the elder's advice or trust your intuition to guide you?"
+    options:
+      - title: "Heed the elder's advice"
+        story: "Following the elder's advice, you uncover a hidden passage leading to the heart of the forest."
+        next: "ending1"
+      - title: "Trust your intuition"
+        story: "Trusting your intuition, you follow the call of the forest, guided by the unseen forces that dwell within."
+        next: "ending2"
+  step4:
+    prompt: "Will you explore the ruins or decipher the ancient inscriptions?"
+    options:
+      - title: "Explore the ruins"
+        story: "Exploring the ruins, you uncover relics of a forgotten civilization and clues to the temple's location."
+        next: "ending3"
+      - title: "Decipher the ancient inscriptions"
+        story: "Deciphering the inscriptions, you unlock the secrets of the temple's guardians and their eternal vigil."
+        next: "ending4"
+  step5:
+    prompt: "Will you meditate in the glade or listen to the whispers of the forest?"
+    options:
+      - title: "Meditate in the glade"
+        story: "Meditating in the glade, you commune with the spirits of the forest, who reveal the path to the temple."
+        next: "ending5"
+      - title: "Listen to the whispers of the forest"
+        story: "Listening to the whispers of the forest, you hear the echoes of eternity guiding you towards your destiny."
+        next: "ending6"
+endings:
+  ending1:
+    story: "Following the hidden passage, you discover the temple, where the elder's wisdom leads you to unlock its ancient mysteries."
+  ending2:
+    story: "Trusting your intuition, you become one with the forest, finding the temple and unlocking its secrets through the power of your connection."
+  ending3:
+    story: "Exploring the ruins, you uncover the temple's location, where the echoes of eternity await, ready to reveal their timeless secrets."
+  ending4:
+    story: "Deciphering the inscriptions, you learn of the temple's guardians and their eternal vigil, preparing you for the trials ahead."
+  ending5:
+    story: "Communing with the spirits in the glade, you unlock the temple's secrets, becoming a guardian of the echoes of eternity."
+  ending6:
+    story: "Listening to the whispers of the forest, you follow the echoes of eternity to the temple, where your destiny awaits amidst its ancient halls."
