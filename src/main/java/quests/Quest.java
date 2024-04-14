@@ -5,10 +5,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public record Quest(String title,
                     String story,
@@ -27,13 +24,13 @@ public record Quest(String title,
 
     public record Ending(String story) {}
 
-    public static Quest loadQuestFromYaml(String yamlFilePath) throws IOException {
+    public static Quest loadQuestFromYaml(String ymlFilePath) throws IOException {
 
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
 
-        InputStream inputStream = Quest.class.getClassLoader().getResourceAsStream(yamlFilePath);
+        InputStream inputStream = Quest.class.getClassLoader().getResourceAsStream(ymlFilePath);
         if (inputStream == null)
-            throw new IllegalArgumentException("File " + yamlFilePath + " not found in resources");
+            throw new IllegalArgumentException("File " + ymlFilePath + " not found in resources");
 
         return mapper.readValue(inputStream, Quest.class);
     }

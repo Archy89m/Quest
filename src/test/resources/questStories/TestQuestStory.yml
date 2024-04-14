@@ -1,0 +1,61 @@
+title: "Title"
+story: "Story"
+decisions:
+  step1:
+    prompt: "Step1_Prompt"
+    options:
+      - title: "Step1_Option1_Title"
+        story: "Step1_Option1_Story"
+        next: "step2"
+      - title: "Step1_Option2_Title"
+        story: "Step1_Option2_Story"
+        next: "step3"
+  step2:
+    prompt: "Step2_Prompt"
+    options:
+      - title: "Step2_Option1_Title"
+        story: "Step2_Option1_Story"
+        next: "step4"
+      - title: "Step2_Option2_Title"
+        story: "Step2_Option2_Story"
+        next: "step5"
+  step3:
+    prompt: "Step3_Prompt"
+    options:
+      - title: "Step3_Option1_Title"
+        story: "Step3_Option1_Story"
+        next: "ending1"
+      - title: "Step3_Option2_Title"
+        story: "Step3_Option2_Story"
+        next: "ending2"
+  step4:
+    prompt: "Step4_Prompt"
+    options:
+      - title: "Step4_Option1_Title"
+        story: "Step4_Option1_Story"
+        next: "ending3"
+      - title: "Step4_Option2_Title"
+        story: "Step4_Option2_Story"
+        next: "ending4"
+  step5:
+    prompt: "Step5_Prompt"
+    options:
+      - title: "Step5_Option1_Title"
+        story: "Step5_Option1_Story"
+        next: "ending5"
+      - title: "Step5_Option2_Title"
+        story: "Step5_Option2_Story"
+        next: "ending6"
+endings:
+  ending1:
+    story: "ending1"
+  ending2:
+    story: "ending2"
+  ending3:
+    story: "ending3"
+  ending4:
+    story: "ending4"
+  ending5:
+    story: "ending5"
+  ending6:
+    story: "ending6"

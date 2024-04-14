@@ -1,7 +1,6 @@
 package servlets;
 
 import quests.Quest;
-import services.Utils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
